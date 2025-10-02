@@ -1,14 +1,17 @@
 .wrapper {
   display: flex;
 }
+/*サイドバー*/
 .side-bar {
   background-color: #253141;
   width: 300px;
+  width: 300px; /* var(--sidebar-width); */
   height: 100vh;
 }
 
 .side-bar-header {
   height: 100px;
+  height: 100px; /* var(--header-height); */
   padding: 0 20px;
   background-color: #253141;
   display: flex;
@@ -22,6 +25,7 @@
   text-decoration: none;
 }
 
+/* ルーム一覧 */
 .create-room a {
   font-size: 10px;
   border: 1px solid lightblue;
@@ -33,6 +37,7 @@
 .rooms {
   background-color: #2F3E51;
   height: calc(100vh - 100px);
+  height: calc(100vh - 100px); /* calc(100vh - var(--header-height)); */
   padding: 0 20px;
   overflow: scroll;
 }
@@ -46,13 +51,17 @@
   color: white;
 }
 
+/* チャット画面 */
 .chat {
   background-color: #FFFFFF;
   width: calc(100vw - 300px);
+  width: calc(100vw - 300px); /* calc(100vw - var(--sidebar-width)); */
 }
 
+/* チャットヘッダー */
 .chat-header {
   height: 100px;
+  height: 100px; /* var(--header-height); */
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
@@ -75,9 +84,11 @@
   padding: 20px;
 }
 
+/* チャットメッセージ */
 .messages {
   background-color: #FAFAFA;
   height: calc(100vh - 100px - 90px);
+  height: calc(100vh - 100px - 90px); /* calc(100vh - var(--header-height) - 90px); */
   padding: 46px 40px 0;
   overflow: scroll;
 }
@@ -111,6 +122,7 @@
   margin-bottom: 40px;
 }
 
+/* チャットフォーム */
 .form {
   background-color: #DDDDDD;
   height: 90px;
