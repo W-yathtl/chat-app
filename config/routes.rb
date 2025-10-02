@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   # ユーザーコントローラーのルーティング
    resources :users, only: [:edit, :update]
+
+   # ルームコントローラーのルーティング
+   resources :rooms, only: [:new, :create]
 end
