@@ -4,11 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # 名前がないと保存しないバリデーション
-  validates :name, presence: true
-
   # 多くのroom_usersと紐づくアソシエーションを定義
   has_many :room_users
   # 多くのroomsと紐づくアソシエーションをroom_usersを中間モデルに定義
   has_many :rooms, through: :room_users
+
+  # メッセージのアソシエーションを定義
+  has_many :messages
+
+  # 名前がないと保存しないバリデーション
+  validates :name, presence: true
 end

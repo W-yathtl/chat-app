@@ -4,6 +4,9 @@ class Room < ApplicationRecord
   # 多くのusersと紐づくアソシエーションをroom_usersを中間モデルに定義
   has_many :users, through: :room_users
 
+  # メッセージのアソシエーションを定義
+  has_many :messages
+
   # 名前がないと保存しないバリデーション
   validates :name, presence: true
 
