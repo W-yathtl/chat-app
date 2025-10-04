@@ -12,7 +12,7 @@
   <% current_user.rooms.each do |room| %><%# 現在のユーザーがs所属するroomsの数だけ処理を行う %>
     <div class="room">
       <div class="room-name">
-        <a href="#"><%= room.name %></a><%# roomのnameを表示し，ルームに遷移するリンク %>
+         <%= link_to room.name, room_messages_path(room) %></a><%# room_nameを表示し，ルームとメッセージのネストのパスになっている。%>
       </div>
     </div>
   <% end %>
