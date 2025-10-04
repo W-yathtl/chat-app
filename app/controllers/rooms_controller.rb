@@ -18,6 +18,13 @@ class RoomsController < ApplicationController
     end
   end
 
+  # ルームを削除してルートパスにリダイレクト
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    redirect_to root_path
+  end
+
   private
   # nameとuser_idsのみを取得するストロングパラメーター
   def room_params

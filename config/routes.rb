@@ -11,7 +11,7 @@ Rails.application.routes.draw do
    resources :rooms, only: [:new, :create]
 
   #  メッセージコントローラーのルーティング roomモデルのnewとcreateアクションとネスト構造にする。
-   resources :rooms, only: [:new, :create] do
+  resources :rooms, only: [:new, :create, :destroy] do
     resources :messages, only: [:index, :create]
   end
 end
