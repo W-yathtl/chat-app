@@ -3,6 +3,9 @@ class Message < ApplicationRecord
   belongs_to :room
   belongs_to :user
 
+  # imageとのアソシエーションを定義
+  has_one_attached :image
+
   # メッセージ内容がないと保存しないバリデーション
   validates :content, presence: true
 end
