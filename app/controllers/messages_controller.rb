@@ -20,8 +20,7 @@ class MessagesController < ApplicationController
   end
 
   private
-  # contentのみを取得するストロングパラメーター ユーザーidをparamsに含む
+  # contentとimageのみを取得するストロングパラメーター ユーザーidをparamsに含む
   def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
-  end
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)  end
 end

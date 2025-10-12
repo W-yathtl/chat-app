@@ -3,6 +3,14 @@ class Message < ApplicationRecord
   belongs_to :room
   belongs_to :user
 
-  # メッセージ内容がないと保存しないバリデーション
-  validates :content, presence: true
+  # imageとのアソシエーションを定義
+  has_one_attached :image
+
+  # メッセージ内容か画像のどちらかがないと保存しないバリデーション
+  validates :content, presence: true, unless: :was_attached?
+
+#画像があればtrueなければfaslseを返す。
+  def was_attached?
+    self.image.attached?
+  end
 end
